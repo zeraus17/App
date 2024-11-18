@@ -1,0 +1,11 @@
+<!-- templates/editar_estado.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Editar Estado del Equipo</h2>
+<form method="post">
+    <label for="estado">Nuevo Estado:</label>
+    <input type="text" id="estado" name="estado" value="{{ equipo[9] }}" required>
+    <button type="submit">Guardar Cambios</button>
+</form>
+{% endblock %}

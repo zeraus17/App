@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificar Estado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Verificar Estado del Equipo</h1>
+    <form method="POST">
+        <label for="numero_serie">Número de Serie</label>
+        <input type="text" name="numero_serie"><br>
+        <button type="submit">Verificar</button>
+    </form>
+</body>
+</html>

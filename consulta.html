@@ -1,0 +1,20 @@
+<!-- templates/consulta.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Consulta de Equipo</h2>
+<p>ID: {{ equipo[0] }}</p>
+<p>Nombre del Cliente: {{ equipo[1] }}</p>
+<p>Teléfono: {{ equipo[2] }}</p>
+<p>Email: {{ equipo[3] }}</p>
+<p>Marca: {{ equipo[4] }}</p>
+<p>Modelo: {{ equipo[5] }}</p>
+<p>Tipo: {{ equipo[6] }}</p>
+<p>Número de Serie: {{ equipo[7] }}</p>
+<p>Descripción: {{ equipo[8] }}</p>
+<p>Estado: {{ equipo[9] }}</p>
+<p>Empresa Derivadora: {{ equipo[10] }}</p>
+<p>Novedades: {{ equipo[11] }}</p>
+
+<a href="{{ url_for('emitir_remito', id=equipo[0]) }}">Emitir Remito</a>
+{% endblock %}

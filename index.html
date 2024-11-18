@@ -1,0 +1,37 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Lista de Equipos</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Cliente</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+    </tr>
+    {% for equipo in equipos %}
+    <tr>
+        <td>{{ equipo[0] }}</td>
+        <td>{{ equipo[1] }}</td>
+        <td>{{ equipo[4] }}</td>
+        <td>{{ equipo[5] }}</td>
+        <td>{{ equipo[9] }}</td>
+        <td>
+            <a href="{{ url_for('consulta', id=equipo[0]) }}">Consultar</a> |
+            <a href="{{ url_for('editar_equipo', id=equipo[0]) }}">Editar</a> |
+            <a href="{{ url_for('agregar_novedad', id=equipo[0]) }}">Agregar Novedad</a> |
+            <a href="{{ url_for('editar_estado', id=equipo[0]) }}">Editar Estado</a> |
+            <a href="{{ url_for('emitir_remito', id=equipo[0]) }}" class="btn btn-primary">Emitir Remito</a> |
+            <form action="{{ url_for('eliminar_equipo', id=equipo[0]) }}" method="post" style="display:inline;">
+                <button type="submit" onclick="return confirm('¿Seguro que deseas eliminar este equipo?');">Eliminar</button>
+            </form>
+        </td>
+    </tr>
+    <a href="{{ url_for('editar_estado', id=equipo[0]) }}">Editar Estado</a>
+
+    {% endfor %}
+</table>
+{% endblock %}

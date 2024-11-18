@@ -1,0 +1,18 @@
+<!-- templates/nuevo_equipo.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Agregar Nuevo Equipo</h2>
+<form action="{{ url_for('nuevo_equipo') }}" method="post">
+    <label>Nombre del Cliente:</label><input type="text" name="nombre_cliente" required>
+    <label>Teléfono:</label><input type="text" name="telefono_cliente">
+    <label>Email:</label><input type="email" name="email_cliente">
+    <label>Marca:</label><input type="text" name="marca" required>
+    <label>Modelo:</label><input type="text" name="modelo">
+    <label>Tipo:</label><input type="text" name="tipo">
+    <label>Número de Serie:</label><input type="text" name="numero_serie">
+    <label>Descripción:</label><textarea name="descripcion"></textarea>
+    <label>Empresa Derivadora:</label><input type="text" name="empresa_derivadora">
+    <button type="submit">Guardar</button>
+</form>
+{% endblock %}

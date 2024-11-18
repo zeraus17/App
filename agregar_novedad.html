@@ -1,0 +1,11 @@
+<!-- templates/agregar_novedad.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Agregar Novedad</h2>
+<form method="POST">
+    <label for="novedad">Novedad:</label>
+    <textarea id="novedad" name="novedad" required></textarea><br>
+    <button type="submit">Guardar Novedad</button>
+</form>
+{% endblock %}
